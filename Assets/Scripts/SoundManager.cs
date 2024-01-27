@@ -174,6 +174,14 @@ namespace Script.Managers
                 m_eatingCerealSFX.Play();
             });
         }
+        
+        public void StopEatingCerealSFX()
+        {
+            m_eatingCerealSFX.DOFade(0f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_eatingCerealSFX.Pause();
+            });
+        }
 
         public void PlayMovingChairSFX()
         {
