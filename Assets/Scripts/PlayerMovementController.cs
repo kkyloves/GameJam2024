@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,13 +9,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
+    [SerializeField] private Sprite idleSprite;
+    [SerializeField] private Sprite[] walkingSprites;
+    
+    
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    void Update()
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        StartCoroutine(MoveAnimation());
+    }
+
+    private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        Debug.Log("horizonta: " + horizontal);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -27,10 +43,36 @@ public class PlayerMovement : MonoBehaviour
 
         Flip();
     }
+    
+    private IEnumerator MoveAnimation()
+    {
+        var walkerCount = 0;
+        while (true)
+        {
+            while (horizontal.Equals(0))
+            {
+                yield return null;
+            }
+
+            if (walkerCount >= walkingSprites.Length)
+            {
+                walkerCount = 0;
+            }
+
+            spriteRenderer.sprite = walkingSprites[walkerCount];
+            walkerCount++;
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+
+    private void StartAnimation()
+    {
+        
     }
 
     private bool IsGrounded()

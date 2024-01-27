@@ -37,7 +37,8 @@ public class PlayerMeowController : MonoBehaviour
                 {
                     noNeedSadBoyTriggerCallback.Invoke();
 
-                    Instantiate(meowSoundPrefab, meowSoundSpawnPosition.transform.position, Quaternion.identity);
+                    var meowSound = Instantiate(meowSoundPrefab, meowSoundSpawnPosition.transform.position, Quaternion.identity);
+                    meowSound.GetComponent<MeowSound>().SetText("MEOW!");
                     canMeow = false;
                     
                     SoundManager.Instance.PlayMeowSFX();
