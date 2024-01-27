@@ -28,6 +28,8 @@ namespace Script.Managers
         [SerializeField] private AudioSource m_radioOnSFX;
         [SerializeField] private AudioSource m_seatingInSofaSFX;
 
+        [SerializeField] private AudioSource m_nextLevelSFX;
+
 
         private void Awake()
         {
@@ -220,6 +222,14 @@ namespace Script.Managers
             m_seatingInSofaSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_seatingInSofaSFX.Play();
+            });
+        }
+
+        public void PlayNextLevelSFX()
+        {
+            m_nextLevelSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_nextLevelSFX.Play();
             });
         }
     }
