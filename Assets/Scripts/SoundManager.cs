@@ -12,8 +12,7 @@ namespace Script.Managers
         [SerializeField] private AudioSource m_doorWindSFX;
         [SerializeField] private AudioSource m_catFootStepSFX;
         [SerializeField] private AudioSource m_catMeowSFX;
-
-
+        
         private void Awake()
         {
             Instance = this;
@@ -55,6 +54,14 @@ namespace Script.Managers
             m_alarmSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_alarmSFX.Play();
+            });
+        }
+
+        public void StopAlarmClockSFX()
+        {
+            m_alarmSFX.DOFade(0f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_alarmSFX.Stop();
             });
         }
 
