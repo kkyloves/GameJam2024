@@ -8,12 +8,10 @@ namespace Script.Managers
         public static SoundManager Instance;
         
         [SerializeField] private AudioSource m_walkingSFX;
-        
-        private int m_buySeedsSFXCounter;
-        private int m_shootSFXCounter;
-        private int m_hitSFXCounter;
-        private int m_rocketTakeoffSFXCounter;
-        private int m_explosionSFXCounter;
+        [SerializeField] private AudioSource m_alarmSFX;
+        [SerializeField] private AudioSource m_doorWindSFX;
+        [SerializeField] private AudioSource m_catFootStepSFX;
+        [SerializeField] private AudioSource m_catMeowSFX;
 
 
         private void Awake()
@@ -50,6 +48,38 @@ namespace Script.Managers
             // {
             //     m_spawnPlantSFX.Play();
             // });
+        }
+
+        public void PlayAlarmClockSFX()
+        {
+            m_alarmSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_alarmSFX.Play();
+            });
+        }
+
+        public void PlayDoorWindSFX()
+        {
+            m_doorWindSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_doorWindSFX.Play();
+            });
+        }
+        
+        public void PlayCatFootStepSFX()
+        {
+            m_catFootStepSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_catFootStepSFX.Play();
+            });
+        }
+
+        public void PlayMeowSFX()
+        {
+            m_catMeowSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_catMeowSFX.Play();
+            });
         }
     }
 }
