@@ -5,9 +5,10 @@ using UnityEngine;
 public class MeowSound : MonoBehaviour
 {
     [SerializeField] private TypeWriterEffect typeWriterEffect;
-    public void Awake()
+
+    public void SetText(string message)
     {
-        typeWriterEffect.SetText("MEOW!");
+        typeWriterEffect.SetText(message);
         Invoke(nameof(DestroyThis), 3f);
     }
 

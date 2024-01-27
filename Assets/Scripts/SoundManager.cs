@@ -44,6 +44,28 @@ namespace Script.Managers
                 });
             }
         }
+        
+        public void PlayCatFootStepSFX()
+        {
+            if (!m_catFootStepSFX.isPlaying)
+            {
+                m_catFootStepSFX.DOFade(0.5f, 0f).OnComplete( () => 
+                {
+                    m_catFootStepSFX.Play();
+                });
+            }
+        }
+        
+        public void StopCatFootStepSFX()
+        {
+            if (m_catFootStepSFX.isPlaying)
+            {
+                m_catFootStepSFX.DOFade(0f, 0.3f).SetUpdate(true).OnComplete( () => 
+                {
+                    m_catFootStepSFX.Pause();
+                });
+            }
+        }
 
 
         public void StopWalkSFX()
@@ -57,17 +79,9 @@ namespace Script.Managers
             }
         }
         
-        public void PlayCatFootStepSFX()
-        {
-            m_catFootStepSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
-            {
-                m_catFootStepSFX.Play();
-            });
-        }
-
         public void PlayMeowSFX()
         {
-            m_catMeowSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            m_catMeowSFX.DOFade(1f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_catMeowSFX.Play();
             });
@@ -75,7 +89,7 @@ namespace Script.Managers
 
         public void PlayOpenCurtainSFX()
         {
-            m_openCurtainSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            m_openCurtainSFX.DOFade(0.1f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_openCurtainSFX.Play();
             });
@@ -88,10 +102,18 @@ namespace Script.Managers
                 m_alarmSFX.Play();
             });
         }
+        
+        public void StopAlarmClockSFX()
+        {
+            m_alarmSFX.DOFade(0f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_alarmSFX.Pause();
+            });
+        }
 
         public void PlayDoorWindSFX()
         {
-            m_doorWindSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            m_doorWindSFX.DOFade(1f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_doorWindSFX.Play();
             });
@@ -99,9 +121,17 @@ namespace Script.Managers
 
         public void PlayShowerSFX()
         {
-            m_showerSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            m_showerSFX.DOFade(1f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_showerSFX.Play();
+            });
+        }
+        
+        public void StopShowerSFX()
+        {
+            m_showerSFX.DOFade(0f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_showerSFX.Pause();
             });
         }
 
@@ -110,6 +140,14 @@ namespace Script.Managers
             m_brushingTeethSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_brushingTeethSFX.Play();
+            });
+        }
+        
+        public void StopToothbrushSFX()
+        {
+            m_brushingTeethSFX.DOFade(0f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_brushingTeethSFX.Pause();
             });
         }
 

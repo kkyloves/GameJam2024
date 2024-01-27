@@ -2,14 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Script.Managers;
 using UnityEngine;
 
 public class SadBoyController : MonoBehaviour
 {
     public static SadBoyController Instance;
+    [SerializeField] private GameObject meowSoundPrefab;
+    [SerializeField] private Transform meowSoundSpawnPosition;
+    
     [SerializeField] private float moveSpeed;
     [SerializeField] private Sprite idleSprite;
     [SerializeField] private Sprite[] walkingSprites;
+    [SerializeField] private Sprite workingSprite;
 
     private Vector2 targetPosition;
     private Action triggerCallback;
@@ -26,6 +31,14 @@ public class SadBoyController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultY = transform.position.y;
         Instance = this;
+
+        targetPosition = transform.position;
+        doingSomething = true;
+        
+        var meowSound = Instantiate(meowSoundPrefab, meowSoundSpawnPosition.transform.position, Quaternion.identity);
+        meowSound.GetComponent<MeowSound>().SetText("WHAT DO YOU NEED ON ME ?!!");
+        
+        Invoke(nameof(ResetDoingSomething), 3f);
     }
 
     private IEnumerator MoveAnimation()
@@ -59,9 +72,16 @@ public class SadBoyController : MonoBehaviour
             this.triggerCallback = triggerCallback;
 
             StartCoroutine(MoveAnimation());
+            SoundManager.Instance.PlayWalkSFX();
         }
     }
 
+    private void ResetDoingSomething()
+    {
+        spriteRenderer.sprite = idleSprite;
+        doingSomething = false;
+    }
+    
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -69,8 +89,13 @@ public class SadBoyController : MonoBehaviour
         {
             if (this.taskController == taskController)
             {
+                SoundManager.Instance.StopWalkSFX();
+
                 taskController.TriggerCallback?.Invoke();
-                cantMove = true;
+                spriteRenderer.sprite = workingSprite;
+                doingSomething = true;
+                
+                Invoke(nameof(ResetDoingSomething), 2f);
             }
         }
     }
@@ -87,6 +112,7 @@ public class SadBoyController : MonoBehaviour
                 if (Mathf.Abs(transform.position.x - targetPosition.x) < 0.5f)
                 {
                     cantMove = true;
+                    SoundManager.Instance.StopWalkSFX();
                     spriteRenderer.sprite = idleSprite;
                 }
                 
@@ -105,12 +131,15 @@ public class SadBoyController : MonoBehaviour
 
     public void SetBath()
     {
+        spriteRenderer.sprite = workingSprite;
         doingSomething = true;
         GetComponent<SpriteRenderer>().DOFade(0f, 1f);
     }
 
     public void GetOutBath()
     {
+        spriteRenderer.sprite = idleSprite;
+
         doingSomething = false;
         GetComponent<SpriteRenderer>().DOFade(1f, 1f);
     }

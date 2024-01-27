@@ -22,6 +22,7 @@ public class TaskController : MonoBehaviour
         this.triggerCallback += () =>
         {
             highlights.enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         };
     }
 

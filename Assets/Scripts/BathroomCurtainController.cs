@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.Managers;
 using UnityEngine;
 
 public class BathroomCurtainController : MonoBehaviour
@@ -16,6 +17,7 @@ public class BathroomCurtainController : MonoBehaviour
     {
         //SoundManager.Instance.PlayDoorWindSFX();
         GetComponent<SpriteRenderer>().sprite = turnOnCurtain;
+        SoundManager.Instance.PlayShowerSFX();
         SadBoyController.Instance.SetBath();
         
         Invoke(nameof(TakeoutBath), 5f);
@@ -25,5 +27,6 @@ public class BathroomCurtainController : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = turnOffCurtain;
         SadBoyController.Instance.GetOutBath();
+        SoundManager.Instance.StopShowerSFX();
     }
 }
