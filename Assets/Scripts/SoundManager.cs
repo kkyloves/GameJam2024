@@ -29,6 +29,7 @@ namespace Script.Managers
         [SerializeField] private AudioSource m_seatingInSofaSFX;
 
         [SerializeField] private AudioSource m_nextLevelSFX;
+        [SerializeField] private AudioSource m_catJumpSFX;
 
 
         private void Awake()
@@ -240,6 +241,14 @@ namespace Script.Managers
             m_nextLevelSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_nextLevelSFX.Play();
+            });
+        }
+
+        public void PlayCatJumpSFX()
+        {
+            m_catJumpSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_catJumpSFX.Play();
             });
         }
     }
