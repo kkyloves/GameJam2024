@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Script.Managers;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -13,6 +14,7 @@ public class BedRoomController : MonoBehaviour
     [SerializeField] private GameObject[] dividersToSetOn;
     [SerializeField] private GameObject[] dividersToSetOff;
 
+    [SerializeField] private SpriteRenderer scribble;
     private int wakeUpCounter;
     private int taskDone;
 
@@ -39,6 +41,7 @@ public class BedRoomController : MonoBehaviour
                 item.SetActive(false);
             }
             
+            scribble.DOFade(0.7f, 0.5f);
             SoundManager.Instance.PlayNextLevelSFX();
         }
     }
@@ -46,7 +49,6 @@ public class BedRoomController : MonoBehaviour
     public void TurnOffLamp()
     {
         wakeUpCounter++;
-        Debug.Log(bedMessages[1]);
 
         if (wakeUpCounter.Equals(2))
         {
