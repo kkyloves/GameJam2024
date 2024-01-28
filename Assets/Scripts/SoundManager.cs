@@ -31,6 +31,18 @@ namespace Script.Managers
         [SerializeField] private AudioSource m_nextLevelSFX;
         [SerializeField] private AudioSource m_catJumpSFX;
 
+        [SerializeField] private AudioSource m_aDayToRememberSFX;
+        [SerializeField] private AudioSource m_idleImWorthlessSFX;
+        [SerializeField] private AudioSource m_idleLifeSucksSFX;
+        [SerializeField] private AudioSource m_idleWhateverSFX;
+        [SerializeField] private AudioSource m_uponClickingBathtubSFX;
+        [SerializeField] private AudioSource m_uponClickingDishesSFX;
+        [SerializeField] private AudioSource m_uponEnteringBathroomSFX;
+        [SerializeField] private AudioSource m_uponEnteringKitchenSFX;
+        [SerializeField] private AudioSource m_uponOpeningRefSFX;
+        [SerializeField] private AudioSource m_uponOpeningWindowSFX;
+        [SerializeField] private AudioSource m_uponWakingUpCatSFX;
+
 
         private void Awake()
         {
@@ -249,6 +261,84 @@ namespace Script.Managers
             m_catJumpSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_catJumpSFX.Play();
+            });
+        }
+
+        public void PlayADayToRememberSFX()
+        {
+            m_aDayToRememberSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_aDayToRememberSFX.Play();
+            });
+        }
+        public void PlayIdleImWOrthlessSFX()
+        {
+            m_idleImWorthlessSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_idleImWorthlessSFX.Play();
+            });
+        }
+        public void PlayIdleLifeSucksSFX()
+        {
+            m_idleLifeSucksSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_idleLifeSucksSFX.Play();
+            });
+        }
+        public void PlayIdleWhateverSFX()
+        {
+            m_idleWhateverSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_idleWhateverSFX.Play();
+            });
+        }
+        public void PlayUponClickingBathtubSFX()
+        {
+            m_uponClickingBathtubSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponClickingBathtubSFX.Play();
+            });
+        }
+        public void PlayUponClickingDishesSFX()
+        {
+            m_uponClickingDishesSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponClickingDishesSFX.Play();
+            });
+        }
+        public void PlayUponEnteringBathroomSFX()
+        {
+            m_uponEnteringBathroomSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponEnteringBathroomSFX.Play();
+            });
+        }
+        public void PlayUponEnteringKitchenSFX()
+        {
+            m_uponEnteringKitchenSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponEnteringKitchenSFX.Play();
+            });
+        }
+        public void PlayUponOpeningRefSFX()
+        {
+            m_uponOpeningRefSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponOpeningRefSFX.Play();
+            });
+        }
+        public void PlayUponOpeningWindowSFX()
+        {
+            m_uponOpeningWindowSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponOpeningWindowSFX.Play();
+            });
+        }
+        public void PlayUponWakingUpCatSFX()
+        {
+            m_uponWakingUpCatSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_uponWakingUpCatSFX.Play();
             });
         }
     }
