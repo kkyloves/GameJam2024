@@ -31,7 +31,7 @@ public class PlayerMeowController : MonoBehaviour
     {
         if (canMeow)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.M))
             {
                 if (noNeedSadBoyTriggerCallback != null)
                 {
@@ -80,10 +80,11 @@ public class PlayerMeowController : MonoBehaviour
             taskController = itemController;
         }
 
-        if (col.gameObject.TryGetComponent(out DividerController dividerController))
-        {
-            CameraController.Instance.SetCameraPosition(dividerController.CameraPoint);
-        }
+        // if (col.gameObject.TryGetComponent(out DividerController dividerController))
+        // {
+        //     dividerController.gameObject.SetActive(false);
+        //     CameraController.Instance.SetCameraPosition(dividerController.CameraPoint);
+        // }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -93,6 +94,12 @@ public class PlayerMeowController : MonoBehaviour
             triggerCallback = null;
             itemController.CloseHighlights();
             taskController = null;
+        }
+        
+        if (other.gameObject.TryGetComponent(out DividerController dividerController))
+        {
+            dividerController.OpenOtherDivider();
+            CameraController.Instance.SetCameraPosition(dividerController.CameraPoint);
         }
 
         // if (other.gameObject.TryGetComponent(out DividerController dividerController))
