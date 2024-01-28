@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: b1c808e3ff4342d478624ef3ed08466d
+guid: 3a728e2699bcd4120b34a9d9c5546826
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6288179971597629913
-    second: Sofa_0
+      213: -8302367045890899819
+    second: Music_bg_0
+  - first:
+      213: 5742277201102914178
+    second: Music_bg_1
+  - first:
+      213: 2698044512590444457
+    second: Music_bg_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -83,18 +89,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sofa_0
+      name: Music_bg_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 13
-        width: 911
-        height: 664
+        x: 12
+        y: 24
+        width: 915
+        height: 1044
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +118,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 726823dc1a5ebb8a0800000000000000
-      internalID: -6288179971597629913
+      spriteID: 59083cad82118cc80800000000000000
+      internalID: -8302367045890899819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music_bg_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 283
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2824095c0baa0bf40800000000000000
+      internalID: 5742277201102914178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music_bg_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 242
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a735297031617520800000000000000
+      internalID: 2698044512590444457
       vertices: []
       indices: 
       edges: []
@@ -140,8 +176,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Sofa_0: -6288179971597629913
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

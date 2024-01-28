@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: b1c808e3ff4342d478624ef3ed08466d
+guid: 82ecc77ed8f1142b5a63388365fd4de1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6288179971597629913
-    second: Sofa_0
+      213: -7298608158845317954
+    second: Off_music_0
+  - first:
+      213: -1487208286192208673
+    second: Off_music_1
+  - first:
+      213: -7124461333927185667
+    second: Off_music_2
+  - first:
+      213: 1803184829620274559
+    second: Off_music_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -83,18 +92,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,22 +107,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sofa_0
+      name: Off_music_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 13
-        width: 911
-        height: 664
+        x: 76
+        y: 383
+        width: 107
+        height: 119
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 726823dc1a5ebb8a0800000000000000
-      internalID: -6288179971597629913
+      spriteID: ebcc1499c8226ba90800000000000000
+      internalID: -7298608158845317954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Off_music_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 8
+        width: 740
+        height: 1064
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 2, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4fe7a71ff5c5be0800000000000000
+      internalID: -1487208286192208673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Off_music_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 231
+        width: 105
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2b34fe924d02d90800000000000000
+      internalID: -7124461333927185667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Off_music_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 124
+        width: 104
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75c3e18c03360910800000000000000
+      internalID: 1803184829620274559
       vertices: []
       indices: 
       edges: []
@@ -133,7 +193,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 83cdeefb78c4a49a699946884bf29496
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sofa_0: -6288179971597629913
+      Off_music_0: -7298608158845317954
+      Off_music_1: -1487208286192208673
+      Off_music_2: -7124461333927185667
+      Off_music_3: 1803184829620274559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

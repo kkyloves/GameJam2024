@@ -18,6 +18,7 @@ public class AlarmController : MonoBehaviour
         animator.enabled = false;
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
         
+        SoundManager.Instance.PlayIdleLifeSucksSFX();
         Invoke(nameof(TakeoutBath), 2f);
     }
     
