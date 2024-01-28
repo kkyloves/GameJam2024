@@ -43,6 +43,9 @@ namespace Script.Managers
         [SerializeField] private AudioSource m_uponOpeningWindowSFX;
         [SerializeField] private AudioSource m_uponWakingUpCatSFX;
 
+        [SerializeField] private AudioSource m_gameStartDontWakeMeUpSFX;
+        [SerializeField] private AudioSource m_gameStartGetOutSFX;
+        [SerializeField] private AudioSource m_gameStartShutUpAlreadySFX;
 
         private void Awake()
         {
@@ -339,6 +342,28 @@ namespace Script.Managers
             m_uponWakingUpCatSFX.DOFade(1f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_uponWakingUpCatSFX.Play();
+            });
+        }
+
+        public void PlayGameStartDontWakeMeUpSFX()
+        {
+            m_gameStartDontWakeMeUpSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_gameStartDontWakeMeUpSFX.Play();
+            });
+        }
+        public void PlayGameStartGetOutSFX()
+        {
+            m_gameStartGetOutSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_gameStartGetOutSFX.Play();
+            });
+        }
+        public void PlayGameStartShutUpAlreadySFX()
+        {
+            m_gameStartShutUpAlreadySFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_gameStartShutUpAlreadySFX.Play();
             });
         }
     }
