@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class ToothbrushItem : MonoBehaviour
 {
+    [SerializeField] private BathroomController bathroomController;
+
+    
     private void Start()
     {
         gameObject.GetComponent<TaskController>().SetTriggerCallback(TurnOffLamp);
@@ -12,14 +15,16 @@ public class ToothbrushItem : MonoBehaviour
     {
         //SoundManager.Instance.PlayDoorWindSFX();
         SoundManager.Instance.PlayBrushingTeethSFX();
-        SadBoyController.Instance.SetBath();
+        SadBoyController.Instance.SetToothbrush();
         
         Invoke(nameof(TakeoutBath), 5f);
     }
 
     private void TakeoutBath()
     {
-        SadBoyController.Instance.GetOutBath();
+        SadBoyController.Instance.ResetToothbrush();
         SoundManager.Instance.StopToothbrushSFX();
+        
+        bathroomController.AddTaskDone();
     }
 }

@@ -1,3 +1,4 @@
+using Script.Managers;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -37,6 +38,8 @@ public class BedRoomController : MonoBehaviour
             {
                 item.SetActive(false);
             }
+            
+            SoundManager.Instance.PlayNextLevelSFX();
         }
     }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Script.Managers;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -29,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log("horizonta: " + horizontal);
-
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
@@ -51,9 +50,13 @@ public class PlayerMovement : MonoBehaviour
         {
             while (horizontal.Equals(0))
             {
+                spriteRenderer.sprite = walkingSprites[0];
+                walkerCount = 0;
+                SoundManager.Instance.StopCatFootStepSFX();
                 yield return null;
             }
-
+            
+            SoundManager.Instance.PlayCatFootStepSFX();
             if (walkerCount >= walkingSprites.Length)
             {
                 walkerCount = 0;

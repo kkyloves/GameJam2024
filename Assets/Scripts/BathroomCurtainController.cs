@@ -7,6 +7,7 @@ public class BathroomCurtainController : MonoBehaviour
 {
     [SerializeField] private Sprite turnOnCurtain;
     [SerializeField] private Sprite turnOffCurtain;
+    [SerializeField] private BathroomController bathroomController;
 
     private void Start()
     {
@@ -28,5 +29,7 @@ public class BathroomCurtainController : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = turnOffCurtain;
         SadBoyController.Instance.GetOutBath();
         SoundManager.Instance.StopShowerSFX();
+        
+        bathroomController.AddTaskDone();
     }
 }

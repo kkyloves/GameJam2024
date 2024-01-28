@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Post
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 4212560115
+    locked: 0
+  - name: Cat
+    uniqueID: 836195015
     locked: 0
   - name: Canvas
     uniqueID: 2167221457

@@ -1,11 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using Script.Managers;
 using UnityEngine;
 
-public class AlarmController : MonoBehaviour
+public class FireplaceController : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
     [SerializeField] private Sprite defaultSprite;
-    [SerializeField] private BedRoomController bedRoomController;
+    [SerializeField] private LivingRoomController bedRoomController;
     
     private void Start()
     {
@@ -14,8 +15,7 @@ public class AlarmController : MonoBehaviour
 
     public void TurnOffAlarm()
     {
-        SoundManager.Instance.StopAlarmClockSFX();
-        animator.enabled = false;
+        SoundManager.Instance.PlayChimneyFireSFX();
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
         
         Invoke(nameof(TakeoutBath), 2f);

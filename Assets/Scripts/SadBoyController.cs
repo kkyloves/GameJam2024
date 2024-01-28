@@ -95,7 +95,7 @@ public class SadBoyController : MonoBehaviour
                 spriteRenderer.sprite = workingSprite;
                 doingSomething = true;
                 
-                Invoke(nameof(ResetDoingSomething), 2f);
+                //Invoke(nameof(ResetDoingSomething), 2f);
             }
         }
     }
@@ -107,8 +107,6 @@ public class SadBoyController : MonoBehaviour
             if (!cantMove)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector2(targetPosition.x, defaultY), moveSpeed * Time.deltaTime);
-
-                Debug.Log(Mathf.Abs(transform.position.x - targetPosition.x));
                 if (Mathf.Abs(transform.position.x - targetPosition.x) < 0.5f)
                 {
                     cantMove = true;
@@ -134,6 +132,18 @@ public class SadBoyController : MonoBehaviour
         spriteRenderer.sprite = workingSprite;
         doingSomething = true;
         GetComponent<SpriteRenderer>().DOFade(0f, 1f);
+    }
+    
+    public void SetToothbrush()
+    {
+        spriteRenderer.sprite = workingSprite;
+        doingSomething = true;
+    }
+
+    public void ResetToothbrush()
+    {
+        spriteRenderer.sprite = idleSprite;
+        doingSomething = false;
     }
 
     public void GetOutBath()

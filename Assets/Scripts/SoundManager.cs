@@ -163,15 +163,25 @@ namespace Script.Managers
 
         public void PlayDrinkingSFX()
         {
-            m_drinkingSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            m_drinkingSFX.DOFade(1f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_drinkingSFX.Play();
+            });
+        }
+        
+        public void StopDrinkingWaterSFX()
+        {
+            Debug.Log("drinking water");
+
+            m_drinkingSFX.DOFade(0f, 0f).SetUpdate(true).OnComplete( () => 
+            {
+                m_drinkingSFX.Pause();
             });
         }
 
         public void PlayEatingCerealSFX()
         {
-            m_eatingCerealSFX.DOFade(0.3f, 0f).SetUpdate(true).OnComplete( () => 
+            m_eatingCerealSFX.DOFade(0.5f, 0f).SetUpdate(true).OnComplete( () => 
             {
                 m_eatingCerealSFX.Play();
             });

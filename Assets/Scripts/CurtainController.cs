@@ -22,6 +22,15 @@ public class CurtainController : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = turnOffSprite;
         spotLight.enabled = true;
         
+        Invoke(nameof(TakeoutBath), 2f);
+
+    }
+    
+    private void TakeoutBath()
+    {
+        SadBoyController.Instance.ResetToothbrush();
         bedRoomController.AddTaskDone();
+
+        //bathroomController.AddTaskDone();
     }
 }
